@@ -1,168 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Executive Assistant Application – National Petroleum Council</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Executive Assistant Application – National Petroleum Council</title>
+    <link rel="stylesheet" href="style.css" />
 
-    <style>
-      .app-step { display: none; } /* Hide all steps by default, JS shows the first one */
-      .app-step.active { display: block; }
+    <style>
+      /* Keeping this block here, but removing all application-specific styles for simplification. */
+    </style>
+  </head>
+    <header class="site-header">
+    <div class="container">
+      <div class="top-bar">
+        <a href="index.html" class="logo-wrap">
+          <div class="logo-circle">NPC</div>
+          <div class="logo-text">The National Petroleum Council</div>
+        </a>
 
-      .app-progress {
-        margin-bottom: 1.25rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid var(--npc-border, #e5e7eb)
-      }
-      .app-progress__track {
-        height: 8px;
-        border-radius: 999px;
-        background: #e5e7eb;
-        overflow: hidden
-      }
-      .app-progress__bar {
-        height: 100%;
-        width: 0; /* JS will update this */
-        background: var(--npc-navy, #0b2b5b);
-        transition: width 0.3s ease;
-      }
-      .app-progress__text {
-        margin: .65rem 0 0;
-        color: #4b5563;
-        font-size: .95rem
-      }
-      .app-actions {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-top: 1.5rem;
-      }
-      .app-actions button {
-        width: 50%; /* Make back/next buttons equal size */
-      }
-      .app-actions #backBtn {
-          background-color: #e5e7eb;
-          color: #4b5563;
-          border: 1px solid #d1d5db;
-      }
-      /* Ensure select elements are also styled */
-      select {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%234B5563%22%20d%3D%22M6%209L0%203h12z%22%2F%3E%3C%2Fsvg%3E");
-          background-repeat: no-repeat;
-          background-position: right 12px center;
-          padding-right: 30px;
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About NPC</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="reports.html">Reports</a></li>
+          </ul>
+        </nav>
+
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/company/national-petroleum-council/"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >in</a>
+          <a
+            href="https://www.youtube.com/@NationalPetroleumCouncil"
+            class="social-link social-link--yt"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >▶</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <div class="announcement-bar">
+    <a href="https://www.youtube.com/watch?v=ondgR7b0pbw" target="_blank" rel="noopener noreferrer">
+      Click here to watch the 135th NPC Meeting of the National Petroleum Council.
+    </a>
+  </div>
+
+    <section class="hero hero--small">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>Executive Assistant Application</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+     <body>
+    <div class="container" style="padding: 4rem 0; text-align: center;">
+      <a
+        href="apply.html"
+        style="
+          display: inline-block;
+          padding: 15px 30px;
+          font-size: 1.15rem;
+          font-weight: 600;
+          text-decoration: none;
+          color: white;
+          background-color: #0b2b5b; /* Using NPC Navy for primary color */
+          border-radius: 6px;
+          border: 1px solid #0b2b5b;
           cursor: pointer;
-      }
-    </style>
-  </head>
-  <!-- =========================
-       HEADER
-       ========================= -->
-  <header class="site-header">
-    <div class="container">
-      <div class="top-bar">
-        <a href="index.html" class="logo-wrap">
-          <div class="logo-circle">NPC</div>
-          <div class="logo-text">The National Petroleum Council</div>
-        </a>
-
-        <nav aria-label="Main navigation">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About NPC</a></li>
-            <li><a href="members.html">Members</a></li>
-            <li><a href="reports.html">Reports</a></li>
-          </ul>
-        </nav>
-
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/company/national-petroleum-council/"
-            class="social-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >in</a>
-          <a
-            href="https://www.youtube.com/@NationalPetroleumCouncil"
-            class="social-link social-link--yt"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-          >▶</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- =========================
-       ANNOUNCEMENT BAR
-       ========================= -->
-  <div class="announcement-bar">
-    <a href="https://www.youtube.com/watch?v=ondgR7b0pbw" target="_blank" rel="noopener noreferrer">
-      Click here to watch the 135th NPC Meeting of the National Petroleum Council.
-    </a>
-  </div>
-
-  <!-- =========================
-       PAGE HERO
-       ========================= -->
-  <section class="hero hero--small">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <h1>Contact the National Petroleum Council</h1>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
- <body>
-
-        <div>
-          &copy; <span id="year"></span>
-          <a href="apply.html" target="_blank" rel="noopener">
-           Apply
-          </a>
-        </div>
-
-
-
-    <script src="app.js"></script>
- <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          &copy; <span id="year"></span>
-          <a href="https://www.npc.org" target="_blank" rel="noopener">
-            National Petroleum Council
-          </a>
-        </div>
-        <div class="footer-links">
-          <a href="contact.html">Contact</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms of Service</a>
-        </div>
-      </div>
+        "
+      >
+        Go to Application Page
+      </a>
     </div>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </footer>
+    <script src="app.js"></script>
+ <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          &copy; <span id="year"></span>
+          <a href="https://www.npc.org" target="_blank" rel="noopener">
+            National Petroleum Council
+          </a>
+        </div>
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
 
 
-
-    </body>
+    </body>
 </html>
